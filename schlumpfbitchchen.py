@@ -32,6 +32,10 @@ async def on_ready():
             output = checkhub( os.system("/bin/systemctl status isp-ut4"))
             await message.channel.send(output)
 
+        if message.content.startswith('!ut4importpaks'):
+            os.system("./importpaks.sh")
+            await message.channel.send("Hmmm ich spüre wie mich die paks durchströmen :kissing_closed_eyes: :woozy_face:")
+
         if message.content.startswith('!ut4fullstatus'):
             output ="```" + str(subprocess.check_output("SYSTEMD_COLORS=0 systemctl status isp-ut4.service", shell=True)).replace('\\n', '\n').replace('\\t', '\t') + "```"
             await message.channel.send(output)

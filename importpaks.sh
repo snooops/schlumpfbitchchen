@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for map in `ls maps`; do
+for map in `ls $HOME/maps`; do
 	# copy the map into the ut4 server dir
 	cp $HOME/maps/$map $HOME/LinuxServer/UnrealTournament/Content/Paks/
 
